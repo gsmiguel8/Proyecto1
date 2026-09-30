@@ -8,6 +8,7 @@ Comprobé la configuración con:
 
     git config --get core.excludesfile
 
+    ![Global](Capturas01.png)
 Salió `/home/usuario/.gitignore_global`. El archivo no existía, así que lo creé con estas reglas:
 
     *.o
@@ -17,7 +18,6 @@ Salió `/home/usuario/.gitignore_global`. El archivo no existía, así que lo cr
 
 Despues creé `prueba.o`, `documento.log`, `archivo.zip` y `carpeta/.DS_Store`. Al hacer `git status` no aparecieron, porque el global los ignora.
 
-![Global](Capturas01.png)
 ![Status global](Captura2.png)
 
 ## Parte 2: .gitignore local
