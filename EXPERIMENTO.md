@@ -19,6 +19,7 @@ Salió `/home/usuario/.gitignore_global`. El archivo no existía, así que lo cr
 Despues creé `prueba.o`, `documento.log`, `archivo.zip` y `carpeta/.DS_Store`. Al hacer `git status` no aparecieron, porque el global los ignora.
 
 ![Status global](imagenes_experimento/Captura2.png)
+![Gitignore local](imagenes_experimento/Captura3.png)
 
 ## Parte 2: .gitignore local
 Creé un archivo `.gitignore` en la carpeta del proyecto con estas reglas:
@@ -28,6 +29,8 @@ Creé un archivo `.gitignore` en la carpeta del proyecto con estas reglas:
     dir2/*.txt
     dir3/**/*.txt
     *.o
+
+![Status local](imagenes_experimento/Captura4.png)
     
 Lo que hace cada regla:
 
@@ -39,8 +42,6 @@ Lo que hace cada regla:
 | `dir3/**/*.txt` | Ignora los .txt de dir3 y sus subcarpetas | Funcionó |
 | `*.o` | Ignora los .o en cualquier carpeta | Funcionó |
 
-![Gitignore local](imagenes_experimento/Captura3.png)
-![Status local](imagenes_experimento/Captura4.png)
 ![Check ignore](imagenes_experimento/Captura5.png)
 
 ## El símbolo !
@@ -61,6 +62,5 @@ Después hice `git add dir1/info.txt` y el archivo apareció listo para confirma
 | Lo ven otras personas | No | Sí |
 | Para qué sirve | Archivos de mi sistema o editor | Reglas propias del proyecto |
 
-## Conclusión
-(Escribe aquí con tus palabras qué has aprendido.)
-EOF
+## Push
+![Add info](imagenes_experimento/Captura7.png)
