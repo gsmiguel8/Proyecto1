@@ -1,0 +1,65 @@
+# Experimento con .gitignore
+
+## Qué es .gitignore
+Es un archivo donde le digo a Git qué archivos debe ignorar, es decir, que no aparezcan en `git status` ni se suban al repositorio.
+
+## Parte 1: .gitignore global
+Comprobé la configuración con:
+
+    git config --get core.excludesfile
+
+Salió `/home/usuario/.gitignore_global`. El archivo no existía, así que lo creé con estas reglas:
+
+    *.o
+    *.log
+    *.zip
+    .DS_Store
+
+Despues creé `prueba.o`, `documento.log`, `archivo.zip` y `carpeta/.DS_Store`. Al hacer `git status` no aparecieron, porque el global los ignora.
+
+![Global](capturas/01-global.png)
+![Status global](capturas/02-status-global.png)
+
+## Parte 2: .gitignore local
+Creé un archivo `.gitignore` en la carpeta del proyecto con estas reglas:
+
+    dir1/*
+    !dir1/info.txt
+    dir2/*.txt
+    dir3/**/*.txt
+    *.o
+    
+Lo que hace cada regla:
+
+| Regla | Qué hace | Resultado |
+|---|---|---|
+| `dir1/*` | Ignora todo lo que hay en dir1 | Funcionó |
+| `!dir1/info.txt` | Excepción: info.txt NO se ignora | Funcionó, sí aparece |
+| `dir2/*.txt` | Ignora los .txt de dir2 | `test.txt` ignorado, `otros.py` aparece |
+| `dir3/**/*.txt` | Ignora los .txt de dir3 y sus subcarpetas | Funcionó |
+| `*.o` | Ignora los .o en cualquier carpeta | Funcionó |
+
+![Gitignore local](capturas/03-gitignore-local.png)
+![Status local](capturas/04-status-local.png)
+![Check ignore](capturas/05-check-ignore.png)
+
+## El símbolo !
+El `!` significa "excepción": aunque una regla anterior ignore el archivo, este sí se quiere. Tiene que ir después de la regla que ignora.
+
+Después hice `git add dir1/info.txt` y el archivo apareció listo para confirmar.
+
+![Add info](capturas/06-add-info.png)
+
+## Diferencia entre global y local
+
+| | Global | Local |
+|---|---|---|
+| Dónde está | En mi carpeta personal (`~/.gitignore_global`) | Dentro del proyecto (`.gitignore`) |
+| A qué repos afecta | A todos los de mi ordenador | Solo a ese proyecto |
+| Se sube con push | No | Sí |
+| Lo ven otras personas | No | Sí |
+| Para qué sirve | Archivos de mi sistema o editor | Reglas propias del proyecto |
+
+## Conclusión
+(Escribe aquí con tus palabras qué has aprendido.)
+EOF
