@@ -8,7 +8,7 @@ Comprobé la configuración con:
 
     git config --get core.excludesfile
 
-    ![Global](imagenes-experimento/Captura01.png)
+    ![Global](imagenes_experimento/Captura01.png)
 Salió `/home/usuario/.gitignore_global`. El archivo no existía, así que lo creé con estas reglas:
 
     *.o
@@ -18,7 +18,7 @@ Salió `/home/usuario/.gitignore_global`. El archivo no existía, así que lo cr
 
 Despues creé `prueba.o`, `documento.log`, `archivo.zip` y `carpeta/.DS_Store`. Al hacer `git status` no aparecieron, porque el global los ignora.
 
-![Status global](imagenes-experimento/Captura2.png)
+![Status global](imagenes_experimento/Captura2.png)
 
 ## Parte 2: .gitignore local
 Creé un archivo `.gitignore` en la carpeta del proyecto con estas reglas:
@@ -39,17 +39,17 @@ Lo que hace cada regla:
 | `dir3/**/*.txt` | Ignora los .txt de dir3 y sus subcarpetas | Funcionó |
 | `*.o` | Ignora los .o en cualquier carpeta | Funcionó |
 
-![Gitignore local](imagenes-experimento/Captura3.png)
-![Status local](imagenes-experimento/Captura4.png)
-![Check ignore](imagenes-experimento/Captura5.png)
+![Gitignore local](imagenes_experimento/Captura3.png)
+![Status local](imagenes_experimento/Captura4.png)
+![Check ignore](imagenes_experimento/Captura5.png)
 
 ## El símbolo !
 El `!` significa "excepción": aunque una regla anterior ignore el archivo, este sí se quiere. Tiene que ir después de la regla que ignora.
 
 Después hice `git add dir1/info.txt` y el archivo apareció listo para confirmar.
 
-![Add info](imagenes-experimento/Captura6.png)
-![Add info](imagenes-experimento/Captura7.png)
+![Add info](imagenes_experimento/Captura6.png)
+![Add info](imagenes_experimento/Captura7.png)
 
 ## Diferencia entre global y local
 
