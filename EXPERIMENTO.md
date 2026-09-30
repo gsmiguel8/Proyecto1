@@ -8,7 +8,7 @@ Comprobé la configuración con:
 
     git config --get core.excludesfile
 
-    ![Global](imagenes_experimento/Captura01.png)
+![Global](imagenes_experimento/Captura01.png)
 Salió `/home/usuario/.gitignore_global`. El archivo no existía, así que lo creé con estas reglas:
 
     *.o
