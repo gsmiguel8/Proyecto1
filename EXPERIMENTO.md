@@ -35,11 +35,11 @@ Lo que hace cada regla:
 
 | Regla | Qué hace | Resultado |
 |---|---|---|
-| `dir1/*` | Ignora todo lo que hay en dir1 | Funcionó |
-| `!dir1/info.txt` | Excepción: info.txt NO se ignora | Funcionó, sí aparece |
+| `dir1/*` | Ignora todo lo que hay en dir1 | Funciona |
+| `!dir1/info.txt` | Excepción: info.txt NO se ignora | Funciona, sí aparece |
 | `dir2/*.txt` | Ignora los .txt de dir2 | `test.txt` ignorado, `otros.py` aparece |
-| `dir3/**/*.txt` | Ignora los .txt de dir3 y sus subcarpetas | Funcionó |
-| `*.o` | Ignora los .o en cualquier carpeta | Funcionó |
+| `dir3/**/*.txt` | Ignora los .txt de dir3 y sus subcarpetas | Funciona |
+| `*.o` | Ignora los .o en cualquier carpeta | Funciona |
 
 ![Check ignore](imagenes_experimento/Captura5.png)
 
@@ -55,7 +55,7 @@ Después hice `git add dir1/info.txt` y el archivo apareció listo para confirma
 
 | | Global | Local |
 |---|---|---|
-| Dónde está | En mi carpeta personal (`~/.gitignore_global`) | Dentro del proyecto (`.gitignore`) |
+| Dónde está | En mi carpeta personal (`home/usuario/.gitignore_global`) | Dentro del proyecto (`.gitignore`) |
 | A qué repos afecta | A todos los de mi ordenador | Solo a ese proyecto |
 | Se sube con push | No | Sí |
 | Lo ven otras personas | No | Sí |
